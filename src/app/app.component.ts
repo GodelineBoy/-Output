@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'myOutput';
+  
+  onomatopias: string[] = []
+
+  constructor(){
+    this.onomatopias = []
+  }
+
+  onReceiveNewOnomatopia($event: string){
+    this.onomatopias.push($event)
+  }
 }
