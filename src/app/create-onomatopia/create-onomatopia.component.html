@@ -1,6 +1,5 @@
-<form (ngSubmit)="createOnomatopia" #myForm="ngForm">
-    <label for="onomatopia">Definir un onomatopée : 
-        <input type="text" name="Onomatopia" id="Onomatopia" [formControl]="newOnomatopia">
-    </label>    
-    <button (click)="myForm.invalid" type="submit">envoyer</button>
-</form>
+
+<div>
+    <input [(ngModel)]="newOnomatopia">
+    <button (click)="createOnomatopia()" >Ajouter</button>
+</div>

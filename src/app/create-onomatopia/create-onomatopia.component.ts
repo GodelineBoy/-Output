@@ -1,6 +1,5 @@
 import { Component, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-create-onomatopia',
@@ -9,13 +8,16 @@ import { FormControl } from '@angular/forms';
 })
 export class CreateOnomatopiaComponent{
 
-  newOnomatopia = new FormControl('')
-  
-  @Output() sendOnomatopiaToParent: EventEmitter<string> = new EventEmitter;
+  newOnomatopia: string | undefined;
+  @Output() sendOnomatopiaToParent: EventEmitter<string> = new EventEmitter();
 
-  createOnomatopia(): void {
-    this.sendOnomatopiaToParent.emit(this.newOnomatopia.value)
-    this.newOnomatopia = new FormControl('')
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  createOnomatopia():void{
+    this.sendOnomatopiaToParent.emit(this.newOnomatopia);
   }
   
 }

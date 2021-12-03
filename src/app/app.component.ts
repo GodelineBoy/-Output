@@ -7,13 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  onomatopias: string[] = []
+  title = 'AngularOutputChallenge';
+  public onomatopias: string[] = new Array<string>();
 
-  constructor(){
-    this.onomatopias = []
+  onReceiveNewOnomatopia($event:string){
+    this.onomatopias.push($event);
+
   }
 
-  onReceiveNewOnomatopia($event: string){
-    this.onomatopias.push($event)
+  ngOnInit(): void {
+    this.onomatopias.push("Raaaaaaaah");
   }
 }
